@@ -12,8 +12,9 @@ class OperandInput extends Component {
     addOperation: PropTypes.func.isRequired,
   }
 
-  onSelect = (obj) => {
-
+  onSelect = (operand) => {
+    const { addOperation } = this.props;
+    addOperation({ operand, input: [1, 1] });
   }
 
   render() {

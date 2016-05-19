@@ -1,10 +1,18 @@
 
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Row, PageHeader, Col, Table } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 class OperationHistory extends Component {
+  static propTypes = {
+    history: PropTypes.array.isRequired,
+  }
+
   render() {
+
+    const { history } = this.props;
+
     return (
       <Row>
         <PageHeader>History</PageHeader>
@@ -18,11 +26,15 @@ class OperationHistory extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>0</td>
-                <td>1 + 2</td>
-                <td>3</td>
-              </tr>
+              {history.map((item, index) => {
+                return (
+                    <tr>
+                      <td>{index}</td>
+                      <td>{item.operand}</td>
+                      <td>{item.result}</td>
+                    </tr>
+                 );
+              })}
             </tbody>
           </Table>
         </Col>
@@ -31,4 +43,6 @@ class OperationHistory extends Component {
   }
 }
 
-export default OperationHistory;
+export default connect(state => ({
+  history: state.operation
+}))(OperationHistory);

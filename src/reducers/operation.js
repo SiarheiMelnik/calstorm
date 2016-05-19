@@ -5,7 +5,7 @@ import { ADD_OPERATION } from '../constants/ActionTypes';
 function executeOperation(state, { payload }) {
   const { input, operand } = payload;
   switch (operand) {
-    case '+':
+    case 'sum':
       return [
         ...state,
         {
@@ -13,7 +13,7 @@ function executeOperation(state, { payload }) {
           result: input[0] + input[1]
         }
       ];
-    case '/':
+    case 'divide':
       return [
         ...state,
         {
@@ -21,7 +21,7 @@ function executeOperation(state, { payload }) {
           result: input[0] / input[1]
         }
       ];
-    case '%':
+    case 'remainder':
       return [
         ...state,
         {
