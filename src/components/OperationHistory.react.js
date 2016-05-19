@@ -28,7 +28,7 @@ class OperationHistory extends Component {
             <tbody>
               {history.map((item, index) => {
                 return (
-                    <tr>
+                    <tr key={index}>
                       <td>{index}</td>
                       <td>{item.operand}</td>
                       <td>{item.result}</td>
