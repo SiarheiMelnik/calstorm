@@ -1,0 +1,2 @@
+
+export const ADD_OPERATION = 'ADD_OPERATION';
