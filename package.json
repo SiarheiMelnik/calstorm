@@ -1,7 +1,7 @@
 {
   "name": "calstorm",
   "version": "1.0.0",
-  "description": "",
+  "description": "react project",
   "scripts": {
     "dev": "node webpack/server"
   },
@@ -28,6 +28,8 @@
     "babel-preset-stage-1": "6.5.0",
     "babel-register": "6.9.0",
     "babel-runtime": "6.9.0",
+    "bootstrap-sass": "^3.3.6",
+    "css-loader": "^0.23.1",
     "eslint": "2.10.2",
     "eslint-config-airbnb": "9.0.1",
     "eslint-plugin-import": "1.8.0",
@@ -40,6 +42,7 @@
     "node-sass": "3.7.0",
     "postcss-loader": "0.9.1",
     "react": "15.0.2",
+    "react-bootstrap": "^0.29.4",
     "react-dom": "15.0.2",
     "regenerator": "0.8.46",
     "sass-loader": "3.2.0",
