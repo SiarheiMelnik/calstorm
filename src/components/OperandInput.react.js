@@ -45,9 +45,10 @@ class OperandInput extends Component {
             </FormGroup>
             {' '}
             <DropdownButton title={"Choose operand"} onSelect={this.onSelect} id={3}>
-              <MenuItem eventKey="sum">+ (sum)</MenuItem>
-              <MenuItem eventKey="divide">/ (divide)</MenuItem>
-              <MenuItem eventKey="remainder">% (remainder of a division)</MenuItem>
+              <MenuItem eventKey="sum">sum</MenuItem>
+              <MenuItem eventKey="divide">divide</MenuItem>
+              <MenuItem eventKey="remainder">remainder of a division</MenuItem>
+              <MenuItem eventKey="prime">highest prime number</MenuItem>
             </DropdownButton>
           </Form>
         </Col>
