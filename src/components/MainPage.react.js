@@ -7,14 +7,16 @@ import { Navbar, Grid, Row, Col } from 'react-bootstrap';
 
 class MainPage extends Component {
   render() {
+    const { Header, Brand } = Navbar;
+
     return (
       <div>
         <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
+          <Header>
+            <Brand>
               <a href="#">CalcStorm</a>
-            </Navbar.Brand>
-          </Navbar.Header>
+            </Brand>
+          </Header>
         </Navbar>
         <Grid>
           <Row>
