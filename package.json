@@ -4,7 +4,10 @@
   "description": "react project",
   "scripts": {
     "dev": "node webpack/server",
-    "test": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha"
+    "test": "babel-node \"./node_modules/.bin/_mocha\" $npm_package_options_mocha",
+    "lint": "eslint src",
+    "prebuild": "npm run lint && npm run test",
+    "build": "NODE_ENV=production babel-node \"./node_modules/.bin/webpack\" --progress --stats --config \"./webpack/prod.config.js\""
   },
   "repository": {
     "type": "git",

@@ -10,7 +10,6 @@ class OperationHistory extends Component {
   }
 
   render() {
-
     const { history } = this.props;
 
     return (
@@ -26,15 +25,14 @@ class OperationHistory extends Component {
               </tr>
             </thead>
             <tbody>
-              {history.map((item, index) => {
-                return (
-                    <tr key={index}>
-                      <td>{index}</td>
-                      <td>{item.operand}</td>
-                      <td>{item.result}</td>
-                    </tr>
-                 );
-              })}
+              {history.map((item, index) =>
+                  (<tr key={index}>
+                    <td>{index}</td>
+                    <td>{item.operand}</td>
+                    <td>{item.result}</td>
+                  </tr>)
+                 )
+               }
             </tbody>
           </Table>
         </Col>
