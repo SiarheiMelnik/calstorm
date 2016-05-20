@@ -23,7 +23,7 @@ function primeMax(n, m) {
   return Math.max(...list);
 }
 
-function executeOperation(state, { payload }) {
+export function executeOperation(state, { payload }) {
   const { input, operand } = payload;
   switch (operand) {
     case 'sum':
