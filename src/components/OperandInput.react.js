@@ -1,8 +1,10 @@
 
 import React, { Component, PropTypes } from 'react';
-import { Row, Col, PageHeader, Form,
+import {
+  Row, Col, PageHeader,
+  Form,
   FormGroup,
-  FormControl, DropdownButton, MenuItem
+  DropdownButton, MenuItem
 } from 'react-bootstrap';
 import * as operationActions from '../actions/operation';
 import { connect } from 'react-redux';
@@ -13,8 +15,9 @@ class OperandInput extends Component {
   }
 
   onSelect = (operand) => {
+    const { input_one, input_two } = this.refs;
     const { addOperation } = this.props;
-    addOperation({ operand, input: [1, 1] });
+    addOperation({ operand, input: [+input_one.value, +input_two.value] });
   }
 
   render() {
@@ -23,15 +26,25 @@ class OperandInput extends Component {
         <PageHeader>Input</PageHeader>
         <Col md={12}>
           <Form inline>
-            <FormGroup controlId="formOperand1">
-              <FormControl ref="input_one" type="number" placeholder="Operand1" />
+            <FormGroup>
+              <input
+                className="form-control"
+                ref="input_one"
+                type="number"
+                placeholder="Operand1"
+              />
             </FormGroup>
             {' '}
-            <FormGroup controlId="formOperand2">
-              <FormControl ref="input_two" type="number" placeholder="Operand2" />
+            <FormGroup>
+              <input
+                className="form-control"
+                ref="input_two"
+                type="number"
+                placeholder="Operand2"
+              />
             </FormGroup>
             {' '}
-            <DropdownButton title={"Calculate"} onSelect={this.onSelect} id={3}>
+            <DropdownButton title={"Choose operand"} onSelect={this.onSelect} id={3}>
               <MenuItem eventKey="sum">+ (sum)</MenuItem>
               <MenuItem eventKey="divide">/ (divide)</MenuItem>
               <MenuItem eventKey="remainder">% (remainder of a division)</MenuItem>

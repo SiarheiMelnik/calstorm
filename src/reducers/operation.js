@@ -18,7 +18,7 @@ function executeOperation(state, { payload }) {
         ...state,
         {
           operand,
-          result: input[0] / input[1]
+          result: Math.round((input[0] / input[1]) * 1000) / 1000
         }
       ];
     case 'remainder':
