@@ -2,7 +2,6 @@
 import { executeOperation } from '../operation';
 
 describe('operation reducer', () => {
-
   it('shoud sum two numbers', () => {
     const payload = { input: [1, 2], operand: 'sum' };
     const [firstRes] = executeOperation([], { payload });
@@ -30,5 +29,4 @@ describe('operation reducer', () => {
     expect(firstRes.operand).equal('highest prime number');
     expect(firstRes.result).equal(3);
   });
-
 });
