@@ -15,7 +15,7 @@
     "url": "git+https://github.com/SiarheiMelnik/calstorm.git"
   },
   "options": {
-    "mocha": "--require ./resources/mocha-inject --check-leaks --full-trace src/**/__tests__/**/*-test.js"
+    "mocha": "--require \"./resources/mocha-inject\" --check-leaks --full-trace \"src/**/__tests__/**/*-test.js\""
   },
   "author": "siarhei.m.a@gmail.com",
   "license": "ISC",
